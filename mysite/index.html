@@ -1,0 +1,8 @@
+    <h2>Todo</h2>  
+      
+    {% for x in views %}  
+    <p>{{ x.name }} - {{ x.created|date:"D d M Y" }}</p>  
+      
+    <p>{{ x.description }}</p>  
+    <hr />  
+    {% endfor %}  
