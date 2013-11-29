@@ -1,4 +1,5 @@
 import os
+SETTINGS_DIR = os.path.dirname(__file__)
 # Django settings for tangorango project.
 
 DEBUG = True
@@ -7,10 +8,11 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
-SETTINGS_DIR = os.path.dirname(__file__)
+
 
 PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
 PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+
 
 MANAGERS = ADMINS
 
@@ -26,7 +28,7 @@ DATABASES = {
     }
 }
 
-TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'template')
+TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -70,12 +72,13 @@ MEDIA_URL = ''
 # Example: "/var/www/example.com/static/"
 STATIC_ROOT = ''
 
+STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
 # Additional locations of static files
-STATICFILES_DIRS = (
+STATICFILES_DIRS = (STATIC_PATH,
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
