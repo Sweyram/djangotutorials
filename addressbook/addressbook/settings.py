@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-=======
-import os
-SETTINGS_DIR = os.path.dirname(__file__)
->>>>>>> 6baa26752e8d40a0bd67c6fef3874401ffa360a6
-# Django settings for tangorango project.
+# Django settings for addressbook project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -12,33 +7,20 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
-<<<<<<< HEAD
-=======
-
-PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
-PROJECT_PATH = os.path.abspath(PROJECT_PATH)
-
-
->>>>>>> 6baa26752e8d40a0bd67c6fef3874401ffa360a6
 MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'addressbook',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'root',
+        'PASSWORD': 'p4$$w0rd',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
 }
 
-<<<<<<< HEAD
-=======
-TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
-
->>>>>>> 6baa26752e8d40a0bd67c6fef3874401ffa360a6
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -47,7 +29,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Africa/Accra'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -81,20 +63,12 @@ MEDIA_URL = ''
 # Example: "/var/www/example.com/static/"
 STATIC_ROOT = ''
 
-<<<<<<< HEAD
-=======
-STATIC_PATH = os.path.join(PROJECT_PATH, 'static')
->>>>>>> 6baa26752e8d40a0bd67c6fef3874401ffa360a6
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
 # Additional locations of static files
-<<<<<<< HEAD
 STATICFILES_DIRS = (
-=======
-STATICFILES_DIRS = (STATIC_PATH,
->>>>>>> 6baa26752e8d40a0bd67c6fef3874401ffa360a6
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -109,7 +83,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'vyzxx-7x7h^)yw589git_wnxjo(jpruzo4$63)w@l_n-p@hj=b'
+SECRET_KEY = '34(x$_b%q_p9=m+i6@^nlz8$98^ibf5f$(y0s++4-j+z8f-*sb'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -128,16 +102,12 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'tangorango.urls'
+ROOT_URLCONF = 'addressbook.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'tangorango.wsgi.application'
+WSGI_APPLICATION = 'addressbook.wsgi.application'
 
-<<<<<<< HEAD
-TEMPLATE_DIRS = ( '/home/eyram/Github/djangotutorials/tango_with_django_project/tangorango/tangorango',
-=======
-TEMPLATE_DIRS = ( TEMPLATE_PATH,
->>>>>>> 6baa26752e8d40a0bd67c6fef3874401ffa360a6
+TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -151,13 +121,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
+    'contacts',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-    'rango',
+    'django.contrib.admindocs',
 )
-
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

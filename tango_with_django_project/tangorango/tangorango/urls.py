@@ -1,5 +1,9 @@
 from django.conf.urls import patterns, include, url
 from rango import views
+<<<<<<< HEAD
+=======
+from django.conf import settings
+>>>>>>> 6baa26752e8d40a0bd67c6fef3874401ffa360a6
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -18,3 +22,10 @@ urlpatterns = patterns('',
 
     url(r'^rango/', include('rango.urls')),
 )
+<<<<<<< HEAD
+=======
+
+
+if settings.DEBUG:
+urlpatterns += patterns('django.views.static', (r'media/(?P<path>.*)','serve', {'document_root': settings.MEDIA_ROOT}), )
+>>>>>>> 6baa26752e8d40a0bd67c6fef3874401ffa360a6
