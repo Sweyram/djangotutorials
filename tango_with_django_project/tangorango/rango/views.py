@@ -10,4 +10,5 @@ def index(request):
 	return render_to_response('rango/index.html', context_dict, context)
 
 def about(request):
-	return HttpResponse('Django says here is your about page')
+	context = RequestContext(request)
+	return render_to_response('rango/about.html', context)
