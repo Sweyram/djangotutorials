@@ -3,8 +3,8 @@ from rango import views
 from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     url(r'^rango/', include('rango.urls')),
+    url(r'^admin/', include(admin.site.urls))
 )
 
 
